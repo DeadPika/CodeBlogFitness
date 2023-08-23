@@ -12,20 +12,51 @@ namespace CodeBlogFitness.CMD
             Console.WriteLine("Введите имя Пользователя: ");
             var name = Console.ReadLine();
 
-            Console.WriteLine("Введите пол: ");
-            var gender = Console.ReadLine();
+            var userController = new UserController(name);
+            if (userController.IsNewUser)
+            {
+                Console.Write("Введите пол Пользователя: ");
+                var genderName = Console.ReadLine();
+                var birthDate = ParseDateTime();
+                var weight = ParseDouble("веса");
+                var height = ParseDouble("роста");
 
-            Console.WriteLine("Введите дату рождения: ");
-            var birthDate = DateTime.Parse(Console.ReadLine()); // TODO: переписать
+                userController.SetNewUserData(genderName, birthDate, weight, height);
+            }
 
-            Console.WriteLine("Введите вес: ");
-            var weight = double.Parse(Console.ReadLine());
-
-            Console.WriteLine("Введите рост: ");
-            var height = double.Parse(Console.ReadLine());
-
-            var userController = new UserController(name, gender, birthDate, weight, height);
-            userController.Save();
+            Console.WriteLine(userController.CurrentUser);
+            Console.ReadLine();
+        }
+        private static DateTime ParseDateTime()
+        {
+            DateTime birthDate;
+            while (true)
+            {
+                Console.Write("Введите день рождения(Пример: 01.02.2008): ");
+                if (DateTime.TryParse(Console.ReadLine(), out birthDate))
+                {
+                    return birthDate;
+                }
+                else
+                {
+                    Console.WriteLine("Не верный формат даты!");
+                }
+            }
+        }
+        private static double ParseDouble(string name)
+        {
+            while (true)
+            {
+                Console.Write($"Введите {name}: ");
+                if (double.TryParse(Console.ReadLine(), out double value))
+                {
+                    return value;
+                }
+                else
+                {
+                    Console.WriteLine($"Не верный формат {name}!");
+                }
+            }
         }
     }
 }
