@@ -23,6 +23,8 @@ namespace CodeBlogFitness.BL.Model
             {
                 throw new ArgumentNullException("Имя пола не может быть пумтым или null", nameof(name));
             }
+            else
+                Name = name;
         }
         public override string ToString()
         {

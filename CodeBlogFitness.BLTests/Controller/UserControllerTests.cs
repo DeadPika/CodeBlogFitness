@@ -21,6 +21,7 @@ namespace CodeBlogFitness.BL.Controller.Tests
             var weight = 90;
             var height = 190;
             var controller = new UserController(userName);
+
             // Act
             controller.SetNewUserData(gender, birthDate, weight, height);
             var controller2 = new UserController(userName);
