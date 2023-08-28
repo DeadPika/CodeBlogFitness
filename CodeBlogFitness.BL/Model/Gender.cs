@@ -8,10 +8,11 @@ namespace CodeBlogFitness.BL.Model
     [Serializable]
     public class Gender
     {
+        public int Id { get; set; }
         /// <summary>
         /// Название пола.
         /// </summary>
-        public string Name { get; }
+        public string Name { get; set; }
         /// <summary>
         /// Создать новый пол.
         /// </summary>

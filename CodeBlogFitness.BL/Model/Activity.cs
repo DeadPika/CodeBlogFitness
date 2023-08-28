@@ -5,15 +5,15 @@ namespace CodeBlogFitness.BL.Model
     [Serializable]
     public class Activity
     {
-        public string Name { get; }
-        public double CaloriesPerSecond { get; }
-        public double CaloriesPerMinute { get; }
-        public Activity(string name, double caloriesPerSecond)
+        public int Id { get; set; }
+        public string Name { get; set; }
+        public double CaloriesPerMinute { get; set; }
+        public Activity(string name, double caloriesPerMinute)
         {
 
             // Проверка.
             Name = name;
-            CaloriesPerSecond = caloriesPerSecond;
+            CaloriesPerMinute = caloriesPerMinute;
         }
 
         public override string ToString()
