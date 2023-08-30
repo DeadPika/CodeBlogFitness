@@ -7,7 +7,7 @@ namespace CodeBlogFitness.BL.Controller
 {
     class SerializeDataSaver : IDataSaver
     {
-        public T Load<T>(string fileName)
+        public T Load<T>(string fileName) where T : class
         {
             var formatter = new BinaryFormatter();
             using (var fs = new FileStream(fileName, FileMode.OpenOrCreate))
