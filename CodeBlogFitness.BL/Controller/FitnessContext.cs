@@ -12,7 +12,7 @@ namespace CodeBlogFitness.BL.Controller
         public DbSet<Eating> Eatings { get; set; }
         public DbSet<Exercise> Exercises { get; set; }
         public DbSet<Food> Foods { get; set; }
-        public DbSet<Gender> Geders { get; set; }
+        public DbSet<Gender> Genders { get; set; }
         public DbSet<User> Users { get; set; }
     }
 }

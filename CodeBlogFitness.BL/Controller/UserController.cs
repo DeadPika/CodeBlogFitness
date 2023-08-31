@@ -10,7 +10,7 @@ namespace CodeBlogFitness.BL.Controller
     /// <summary>
     /// Контроллер пользователя.
     /// </summary>
-    public class UserController : ControllerBase
+    public class UserController : ControllerBase<User>
     {
         private const string USERS_FILE_NAME = "users.dat";
         /// <summary>

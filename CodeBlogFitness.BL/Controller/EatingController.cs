@@ -7,7 +7,7 @@ using System.Runtime.Serialization.Formatters.Binary;
 
 namespace CodeBlogFitness.BL.Controller
 {
-    public class EatingController : ControllerBase
+    public class EatingController : ControllerBase<Eating>
     {
         private const string FOODS_FILE_NAME = "foods.dat";
         private const string EATINGS_FILE_NAME = "eatings.dat";
@@ -40,17 +40,16 @@ namespace CodeBlogFitness.BL.Controller
         }
         private Eating GetEating()
         {
-            return Load<Eating>(EATINGS_FILE_NAME) ?? new Eating(user);
+            return Load().First();
         }
 
         private List<Food> GetAllFoods()
         {
-            return Load<List<Food>>(FOODS_FILE_NAME) ?? new List<Food>();
+            return Load<Food>();
         }
         private void Save()
         {
-            Save(FOODS_FILE_NAME, Foods);
-            Save(EATINGS_FILE_NAME, Eating);
+            Save();
         }
     }
 }

@@ -5,7 +5,7 @@ using System.Linq;
 
 namespace CodeBlogFitness.BL.Controller
 {
-    public class ExerciseController : ControllerBase
+    public class ExerciseController : ControllerBase<Exercise>
     {
         private const string EXERCISES_FILE_NAME = "exercises.dat";
         private const string ACTIVITIES_FILE_NAME = "activities.dat";
