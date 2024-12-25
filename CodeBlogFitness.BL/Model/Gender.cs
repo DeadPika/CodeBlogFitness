@@ -5,6 +5,7 @@ namespace CodeBlogFitness.BL.Model
     /// <summary>
     /// Гендер.
     /// </summary>
+    [Serializable]
     public class Gender
     {
         /// <summary>
