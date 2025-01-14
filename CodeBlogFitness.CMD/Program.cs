@@ -39,7 +39,7 @@ namespace CodeBlogFitness.CMD
                 }
                 else
                 {
-                    Console.WriteLine($"Неверный формат {name}");
+                    Console.WriteLine($"Неверный формат {name}а!");
                 }
             }
         }
@@ -48,16 +48,17 @@ namespace CodeBlogFitness.CMD
             DateTime birthDate;
             while (true)
             {
-                Console.Write("Введите дату рождения (dd,MM, yyyy): ");
+                Console.Write("Введите дату рождения (dd, MM, yyyy): ");
                 if (DateTime.TryParse(Console.ReadLine(), out birthDate))
                 {
-                    return birthDate;
+                    break;
                 }
                 else
                 {
                     Console.WriteLine("Неверный формат даты рождения!");
                 }
             }
+            return birthDate;
         }
     }
 }

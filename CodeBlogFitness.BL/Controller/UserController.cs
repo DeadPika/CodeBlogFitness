@@ -33,7 +33,7 @@ namespace CodeBlogFitness.BL.Controller
                 throw new ArgumentNullException("Имя пользователя не может быть пустым", nameof(userName));
             }
 
-            Users = new List<User>();
+            Users = GetUsersData();
 
             CurrentUser = Users.SingleOrDefault(u => u.Name == userName);
 
@@ -56,7 +56,7 @@ namespace CodeBlogFitness.BL.Controller
 
             using (var fs = new FileStream("users.dat", FileMode.OpenOrCreate))
             {
-                if (formatter.Deserialize(fs) is List<User> users)
+                if (fs.Length > 0 && formatter.Deserialize(fs) is List<User> users)
                 {
                     return users;
                 }
