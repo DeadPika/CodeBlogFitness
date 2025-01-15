@@ -3,11 +3,11 @@
   <PropertyGroup>
     <Configuration Condition=" '$(Configuration)' == '' ">Debug</Configuration>
     <Platform Condition=" '$(Platform)' == '' ">AnyCPU</Platform>
-    <ProjectGuid>{283433E8-2430-40C6-8B14-ECD7F1AEDD2D}</ProjectGuid>
+    <ProjectGuid>{2DC8FFEB-3568-4857-9247-B02A441D2D93}</ProjectGuid>
     <OutputType>Library</OutputType>
     <AppDesignerFolder>Properties</AppDesignerFolder>
-    <RootNamespace>CodeBlogFitness.BLTests</RootNamespace>
-    <AssemblyName>CodeBlogFitness.BLTests</AssemblyName>
+    <RootNamespace>CodeBlogFitness.BLTests1</RootNamespace>
+    <AssemblyName>CodeBlogFitness.BLTests1</AssemblyName>
     <TargetFrameworkVersion>v4.7.2</TargetFrameworkVersion>
     <FileAlignment>512</FileAlignment>
     <ProjectTypeGuids>{3AC096D0-A1C2-E12C-1390-A8335801FDAB};{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}</ProjectTypeGuids>
@@ -50,15 +50,8 @@
     </Otherwise>
   </Choose>
   <ItemGroup>
-    <Compile Include="Controller\EatingControllerTests.cs" />
-    <Compile Include="Controller\UserControllerTests.cs" />
+    <Compile Include="UnitTest1.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
-  </ItemGroup>
-  <ItemGroup>
-    <ProjectReference Include="..\CodeBlogFitness.BL\CodeBlogFitness.BL.csproj">
-      <Project>{4DEB7E1F-13F6-4C12-9159-AB33A8FEEBCA}</Project>
-      <Name>CodeBlogFitness.BL</Name>
-    </ProjectReference>
   </ItemGroup>
   <Choose>
     <When Condition="'$(VisualStudioVersion)' == '10.0' And '$(IsCodedUITest)' == 'True'">
