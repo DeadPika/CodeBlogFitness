@@ -1,0 +1,10 @@
+{
+  "profiles": {
+    "CodeBlogFitness.CMD": {
+      "commandName": "Project"
+    },
+    "Container (Dockerfile)": {
+      "commandName": "Docker"
+    }
+  }
+}

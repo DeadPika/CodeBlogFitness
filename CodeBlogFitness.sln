@@ -1,13 +1,13 @@
 ﻿
 Microsoft Visual Studio Solution File, Format Version 12.00
 # Visual Studio Version 17
-VisualStudioVersion = 17.12.35527.113
+VisualStudioVersion = 17.12.35707.178 d17.12
 MinimumVisualStudioVersion = 10.0.40219.1
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "CodeBlogFitness.BL", "CodeBlogFitness.BL\CodeBlogFitness.BL.csproj", "{4DEB7E1F-13F6-4C12-9159-AB33A8FEEBCA}"
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "CodeBlogFitness.CMD", "CodeBlogFitness.CMD\CodeBlogFitness.CMD.csproj", "{171A574E-1247-4C9C-A3DF-6F154B6A4A35}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "CodeBlogFitness.CMD", "CodeBlogFitness.CMD\CodeBlogFitness.CMD.csproj", "{09A342B5-4D24-40E2-8D05-8B4CC484F4F0}"
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "CodeBlogFitness.BL", "CodeBlogFitness.BL\CodeBlogFitness.BL.csproj", "{368B2E99-4C7B-4BA3-8186-E576430246AE}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "CodeBlogFitness.BLTests", "CodeBlogFitness.BLTests\CodeBlogFitness.BLTests.csproj", "{283433E8-2430-40C6-8B14-ECD7F1AEDD2D}"
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "CodeBlogFitness.BLTests", "CodeBlogFitness.BLTests\CodeBlogFitness.BLTests.csproj", "{052BA7CA-302C-4706-9E71-5CD186E208DA}"
 EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
@@ -15,18 +15,18 @@ Global
 		Release|Any CPU = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(ProjectConfigurationPlatforms) = postSolution
-		{4DEB7E1F-13F6-4C12-9159-AB33A8FEEBCA}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
-		{4DEB7E1F-13F6-4C12-9159-AB33A8FEEBCA}.Debug|Any CPU.Build.0 = Debug|Any CPU
-		{4DEB7E1F-13F6-4C12-9159-AB33A8FEEBCA}.Release|Any CPU.ActiveCfg = Release|Any CPU
-		{4DEB7E1F-13F6-4C12-9159-AB33A8FEEBCA}.Release|Any CPU.Build.0 = Release|Any CPU
-		{09A342B5-4D24-40E2-8D05-8B4CC484F4F0}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
-		{09A342B5-4D24-40E2-8D05-8B4CC484F4F0}.Debug|Any CPU.Build.0 = Debug|Any CPU
-		{09A342B5-4D24-40E2-8D05-8B4CC484F4F0}.Release|Any CPU.ActiveCfg = Release|Any CPU
-		{09A342B5-4D24-40E2-8D05-8B4CC484F4F0}.Release|Any CPU.Build.0 = Release|Any CPU
-		{283433E8-2430-40C6-8B14-ECD7F1AEDD2D}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
-		{283433E8-2430-40C6-8B14-ECD7F1AEDD2D}.Debug|Any CPU.Build.0 = Debug|Any CPU
-		{283433E8-2430-40C6-8B14-ECD7F1AEDD2D}.Release|Any CPU.ActiveCfg = Release|Any CPU
-		{283433E8-2430-40C6-8B14-ECD7F1AEDD2D}.Release|Any CPU.Build.0 = Release|Any CPU
+		{171A574E-1247-4C9C-A3DF-6F154B6A4A35}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{171A574E-1247-4C9C-A3DF-6F154B6A4A35}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{171A574E-1247-4C9C-A3DF-6F154B6A4A35}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{171A574E-1247-4C9C-A3DF-6F154B6A4A35}.Release|Any CPU.Build.0 = Release|Any CPU
+		{368B2E99-4C7B-4BA3-8186-E576430246AE}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{368B2E99-4C7B-4BA3-8186-E576430246AE}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{368B2E99-4C7B-4BA3-8186-E576430246AE}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{368B2E99-4C7B-4BA3-8186-E576430246AE}.Release|Any CPU.Build.0 = Release|Any CPU
+		{052BA7CA-302C-4706-9E71-5CD186E208DA}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{052BA7CA-302C-4706-9E71-5CD186E208DA}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{052BA7CA-302C-4706-9E71-5CD186E208DA}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{052BA7CA-302C-4706-9E71-5CD186E208DA}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE

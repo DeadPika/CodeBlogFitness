@@ -9,8 +9,8 @@ namespace CodeBlogFitness.BL.Controller
 {
     public class EatingController : ControllerBase
     {
-        private const string FOODS_FILE_NAME = "foods.dat";
-        private const string EATINGS_FILE_NAME = "eatings.dat";
+        private const string FOODS_FILE_NAME = "foods.json";
+        private const string EATINGS_FILE_NAME = "eatings.json";
         private readonly User User;
         public List<Food> Foods { get; }
         public Eating Eating { get; }

@@ -117,10 +117,43 @@
   <resheader name="writer">
     <value>System.Resources.ResXResourceWriter, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
   </resheader>
+  <data name="Birthdate" xml:space="preserve">
+    <value>дата рождения</value>
+  </data>
+  <data name="EndExercise" xml:space="preserve">
+    <value>окончание упражнения</value>
+  </data>
+  <data name="EnergyPerMinute" xml:space="preserve">
+    <value>расход энергии в минуту</value>
+  </data>
+  <data name="EnterExercise" xml:space="preserve">
+    <value>Введите название упражнения: </value>
+  </data>
+  <data name="EnterGender" xml:space="preserve">
+    <value>Введите ваш пол: </value>
+  </data>
+  <data name="EnterProduct" xml:space="preserve">
+    <value>Введите название продукта: </value>
+  </data>
   <data name="EnterUserName" xml:space="preserve">
     <value>Введите имя пользователя:</value>
   </data>
+  <data name="Height" xml:space="preserve">
+    <value>рост</value>
+  </data>
   <data name="Hello" xml:space="preserve">
     <value>Вас приветствует приложение CodeBlogFitness от Гавра.</value>
+  </data>
+  <data name="PortionWeight" xml:space="preserve">
+    <value>Вес порции</value>
+  </data>
+  <data name="Proteins" xml:space="preserve">
+    <value>Белки</value>
+  </data>
+  <data name="StartExercise" xml:space="preserve">
+    <value>начало упражнения</value>
+  </data>
+  <data name="Weight" xml:space="preserve">
+    <value>вес</value>
   </data>
 </root>

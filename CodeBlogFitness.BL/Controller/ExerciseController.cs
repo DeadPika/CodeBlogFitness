@@ -7,8 +7,8 @@ namespace CodeBlogFitness.BL.Controller
 {
     public class ExerciseController : ControllerBase
     {
-        private const string EXERCISES_FILE_NAME = "exercises.dat";
-        private const string ACTIVITIES_FILE_NAME = "activities.dat";
+        private const string EXERCISES_FILE_NAME = "exercises.json";
+        private const string ACTIVITIES_FILE_NAME = "activities.json";
         private readonly User User;
         public List<Exercise> Exercises { get; }
         public List<Activity> Activities { get; }
@@ -32,18 +32,15 @@ namespace CodeBlogFitness.BL.Controller
         public void Add(Activity activity, DateTime begin, DateTime end)
         {
             var act = Activities.SingleOrDefault(a => a.Name == activity.Name);
-            if (act == null) 
+
+            if (act == null)
             {
                 Activities.Add(activity);
-                var exercise = new Exercise(begin, end, activity, User);
-                Exercises.Add(exercise);
+                act = activity;
             }
 
-            else
-            {
-                var exercise = new Exercise(begin, end, activity, User);
-                Exercises.Add(exercise);
-            }
+            var exercise = new Exercise(begin, end, act, User);
+            Exercises.Add(exercise);
 
             Save();
         }

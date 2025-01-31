@@ -1,19 +1,20 @@
 ﻿using System;
 using System.Runtime.CompilerServices;
+using System.Text.Json.Serialization;
 
 namespace CodeBlogFitness.BL.Model
 {
     /// <summary>
     /// Пользователь.
     /// </summary>
-    [Serializable]
     public class User
     {
+        public int Id { get; set; }
         #region Свойства.
         /// <summary>
         /// Имя.
         /// </summary>
-        public string Name { get; }
+        public string Name { get; set; }
         /// <summary>
         /// Пол.
         /// </summary>
@@ -37,6 +38,7 @@ namespace CodeBlogFitness.BL.Model
         //int age = nowDate.Year - birthDate.Year;
         //if (birthDate > nowDate.AddYears(-age)) age--;
         public int Age { get { return DateTime.Now.Year - BirthDate.Year; } }
+        public User() { }
         #endregion
         /// <summary>
         /// Создание нового пользователя.
@@ -87,6 +89,7 @@ namespace CodeBlogFitness.BL.Model
             Weight = weight;
             Height = height;
         }
+        [JsonConstructor]
         public User(string name)
         {
             if (string.IsNullOrWhiteSpace(name))

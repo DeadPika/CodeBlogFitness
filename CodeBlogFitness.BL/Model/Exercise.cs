@@ -2,12 +2,12 @@
 
 namespace CodeBlogFitness.BL.Model
 {
-    [Serializable]
     /// <summary>
     /// Упражнение.
     /// </summary>
     public class Exercise
     {
+        public int Id { get; set; }
         /// <summary>
         /// Начало упражнения.
         /// </summary>
@@ -16,14 +16,17 @@ namespace CodeBlogFitness.BL.Model
         /// Конец упражнения.
         /// </summary>
         public DateTime Finish { get; set; }
+        public int ActivityId { get; set; }
         /// <summary>
         /// Активность.
         /// </summary>
-        public Activity Activity { get; set; }
+        public virtual Activity Activity { get; set; }
+        public int UserId { get; set; }
         /// <summary>
         /// Пользователь.
         /// </summary>
-        public User User { get; }
+        public virtual User User { get; set; }
+        public Exercise() { }
         public Exercise(DateTime start, DateTime finish, Activity activity, User user)
         {
             // TODO: Проверка.

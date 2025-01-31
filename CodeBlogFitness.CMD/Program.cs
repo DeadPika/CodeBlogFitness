@@ -1,6 +1,5 @@
 ﻿using CodeBlogFitness.BL.Controller;
 using CodeBlogFitness.BL.Model;
-using System;
 using System.Globalization;
 using System.Resources;
 
@@ -22,11 +21,11 @@ namespace CodeBlogFitness.CMD
             var exerciseController = new ExerciseController(userController.CurrentUser);
             if (userController.IsNewUser)
             {
-                Console.Write("Введите пол: ");
+                Console.Write(resourceManager.GetString("EnterGender", culture));
                 var gender = Console.ReadLine();
-                var birthDate = ParseDateTime("дата рождения");
-                var weight = ParseDouble("вес");
-                var height = ParseDouble("рост");
+                var birthDate = ParseDateTime(resourceManager.GetString("Birthdate", culture), culture, resourceManager);
+                var weight = ParseDouble(resourceManager.GetString("Weight", culture), culture, resourceManager);
+                var height = ParseDouble(resourceManager.GetString("Height", culture), culture, resourceManager);
 
                 userController.SetNewUserData(gender, birthDate, weight, height);
 
@@ -44,19 +43,19 @@ namespace CodeBlogFitness.CMD
                 switch (key.Key)
                 {
                     case ConsoleKey.E:
-                        var foods = EnterEating();
+                        var foods = EnterEating(culture, resourceManager);
                         eatingController.Add(foods.Food, foods.Weight);
 
                         foreach (var item in eatingController.Eating.Foods)
                         {
-                            Console.WriteLine($"\t{item.Key} - {item.Value} грамм");
+                            Console.WriteLine($"\t{item.Food} - {item.Weight} грамм");
                         }
                         break;
                     case ConsoleKey.A:
-                        var exe = EnterExercise();
+                        var exe = EnterExercise(culture, resourceManager);
                         exerciseController.Add(exe.Activity, exe.Begin, exe.End);
 
-                        foreach(var item in exerciseController.Exercises)
+                        foreach (var item in exerciseController.Exercises)
                         {
                             Console.WriteLine($"\t{item.Activity} с {item.Start.ToShortTimeString()} до {item.Finish.ToShortTimeString()}");
                         }
@@ -69,36 +68,36 @@ namespace CodeBlogFitness.CMD
             }
         }
 
-        private static (DateTime Begin, DateTime End, Activity Activity) EnterExercise()
+        private static (DateTime Begin, DateTime End, BL.Model.Activity Activity) EnterExercise(CultureInfo culture, ResourceManager resourceManager)
         {
-            Console.Write("Введите название упражнения: ");
+            Console.Write(resourceManager.GetString("EnterExercise", culture));
             var name = Console.ReadLine();
 
-            var energy = ParseDouble("расход энергии в минуту");
+            var energy = ParseDouble(resourceManager.GetString("EnergyPerMinute", culture), culture, resourceManager);
 
-            var begin = ParseDateTime("начало упражнения");
-            var end = ParseDateTime("окончание упражнения");
+            var begin = ParseDateTime(resourceManager.GetString("StartExercise", culture), culture, resourceManager);
+            var end = ParseDateTime(resourceManager.GetString("EndExercise", culture), culture, resourceManager);
 
             var activity = new Activity(name, energy);
 
             return (begin, end, activity);
         }
 
-        private static (Food Food, double Weight) EnterEating()
+        private static (Food Food, double Weight) EnterEating(CultureInfo culture, ResourceManager resourceManager)
         {
-            Console.Write("Введите название продукта: ");
+            Console.Write(resourceManager.GetString("EnterProduct", culture));
             var food = Console.ReadLine();
 
-            var weight = ParseDouble("Вес порции");
-            var proteins = ParseDouble("Белки");
-            var fats = ParseDouble("Жиры");
-            var carbohydrates = ParseDouble("Углеводы");
-            var calories = ParseDouble("Калории");
+            var weight = ParseDouble(resourceManager.GetString("PortionWeight", culture), culture, resourceManager);
+            var proteins = ParseDouble(resourceManager.GetString("Proteins", culture), culture, resourceManager);
+            var fats = ParseDouble("Жиры", culture, resourceManager);
+            var carbohydrates = ParseDouble("Углеводы", culture, resourceManager);
+            var calories = ParseDouble("Калории", culture, resourceManager);
 
             return (Food: new Food(food, proteins, fats, carbohydrates, calories), Weight: weight);
         }
 
-        private static double ParseDouble(string name)
+        private static double ParseDouble(string name, CultureInfo culture, ResourceManager resourceManager)
         {
             while (true)
             {
@@ -113,7 +112,7 @@ namespace CodeBlogFitness.CMD
                 }
             }
         }
-        private static DateTime ParseDateTime(string value)
+        private static DateTime ParseDateTime(string value, CultureInfo culture, ResourceManager resourceManager)
         {
             DateTime birthDate;
             while (true)

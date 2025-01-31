@@ -5,13 +5,14 @@ namespace CodeBlogFitness.BL.Model
     /// <summary>
     /// Гендер.
     /// </summary>
-    [Serializable]
     public class Gender
     {
+        public int Id { get; set; }
         /// <summary>
         /// Название.
         /// </summary>
-        public string Name { get; }
+        public string Name { get; set; }
+        public Gender() { }
         /// <summary>
         /// Создать новый пол.
         /// </summary>
