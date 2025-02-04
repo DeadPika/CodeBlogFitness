@@ -34,10 +34,10 @@ namespace CodeBlogFitness.CMD
 
             while (true)
             {
-                Console.WriteLine("Что вы хотите сделать?");
-                Console.WriteLine("E - Ввести приём пищи.");
-                Console.WriteLine("A - Ввести упражнение.");
-                Console.WriteLine("Q - Выход.");
+                Console.WriteLine(resourceManager.GetString("WhatDo", culture));
+                Console.WriteLine(resourceManager.GetString("E", culture));
+                Console.WriteLine(resourceManager.GetString("A", culture));
+                Console.WriteLine(resourceManager.GetString("Q", culture));
                 var key = Console.ReadKey();
                 Console.WriteLine();
                 switch (key.Key)
@@ -48,7 +48,7 @@ namespace CodeBlogFitness.CMD
 
                         foreach (var item in eatingController.Eating.Foods)
                         {
-                            Console.WriteLine($"\t{item.Food} - {item.Weight} грамм");
+                            Console.WriteLine($"\t{item.Food} - {item.Weight} {resourceManager.GetString("Grams", culture)}");
                         }
                         break;
                     case ConsoleKey.A:
@@ -57,7 +57,7 @@ namespace CodeBlogFitness.CMD
 
                         foreach (var item in exerciseController.Exercises)
                         {
-                            Console.WriteLine($"\t{item.Activity} с {item.Start.ToShortTimeString()} до {item.Finish.ToShortTimeString()}");
+                            Console.WriteLine($"\t{item.Activity} {resourceManager.GetString("From", culture)} {item.Start.ToShortTimeString()} {resourceManager.GetString("To", culture)} {item.Finish.ToShortTimeString()}");
                         }
                         break;
                     case ConsoleKey.Q:
@@ -70,7 +70,7 @@ namespace CodeBlogFitness.CMD
 
         private static (DateTime Begin, DateTime End, BL.Model.Activity Activity) EnterExercise(CultureInfo culture, ResourceManager resourceManager)
         {
-            Console.Write(resourceManager.GetString("EnterExercise", culture));
+            Console.Write(resourceManager.GetString("EnterExercise", culture) + " ");
             var name = Console.ReadLine();
 
             var energy = ParseDouble(resourceManager.GetString("EnergyPerMinute", culture), culture, resourceManager);
@@ -90,9 +90,9 @@ namespace CodeBlogFitness.CMD
 
             var weight = ParseDouble(resourceManager.GetString("PortionWeight", culture), culture, resourceManager);
             var proteins = ParseDouble(resourceManager.GetString("Proteins", culture), culture, resourceManager);
-            var fats = ParseDouble("Жиры", culture, resourceManager);
-            var carbohydrates = ParseDouble("Углеводы", culture, resourceManager);
-            var calories = ParseDouble("Калории", culture, resourceManager);
+            var fats = ParseDouble(resourceManager.GetString("Fats", culture), culture, resourceManager);
+            var carbohydrates = ParseDouble(resourceManager.GetString("Carbohydrates", culture), culture, resourceManager);
+            var calories = ParseDouble(resourceManager.GetString("Calories", culture), culture, resourceManager);
 
             return (Food: new Food(food, proteins, fats, carbohydrates, calories), Weight: weight);
         }
@@ -101,14 +101,14 @@ namespace CodeBlogFitness.CMD
         {
             while (true)
             {
-                Console.Write($"Введите {name}: ");
+                Console.Write($"{resourceManager.GetString("Enter", culture)} {name}: ");
                 if (double.TryParse(Console.ReadLine(), out double value))
                 {
                     return value;
                 }
                 else
                 {
-                    Console.WriteLine($"Неверный формат поля {name}!");
+                    Console.WriteLine($"{resourceManager.GetString("Invalid", culture)} {name}!");
                 }
             }
         }
@@ -117,14 +117,14 @@ namespace CodeBlogFitness.CMD
             DateTime birthDate;
             while (true)
             {
-                Console.Write($"Введите {value} (dd, MM, yyyy): ");
+                Console.Write($"{resourceManager.GetString("Enter", culture)} {value} (dd, MM, yyyy): ");
                 if (DateTime.TryParse(Console.ReadLine(), out birthDate))
                 {
                     break;
                 }
                 else
                 {
-                    Console.WriteLine($"Неверный формат {value}!");
+                    Console.WriteLine($"{resourceManager.GetString("Invalid", culture)} {value}!");
                 }
             }
             return birthDate;

@@ -117,14 +117,29 @@
   <resheader name="writer">
     <value>System.Resources.ResXResourceWriter, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
   </resheader>
+  <data name="A" xml:space="preserve">
+    <value>A - Enter the exercise.</value>
+  </data>
   <data name="Birthdate" xml:space="preserve">
     <value>birthdate</value>
+  </data>
+  <data name="Calories" xml:space="preserve">
+    <value>Calories</value>
+  </data>
+  <data name="Carbohydrates" xml:space="preserve">
+    <value>Carbohydrates</value>
+  </data>
+  <data name="E" xml:space="preserve">
+    <value>E - Enter food intake.</value>
   </data>
   <data name="EndExercise" xml:space="preserve">
     <value>end of the exercise</value>
   </data>
   <data name="EnergyPerMinute" xml:space="preserve">
     <value>energy consumption per minute</value>
+  </data>
+  <data name="Enter" xml:space="preserve">
+    <value>Enter</value>
   </data>
   <data name="EnterExercise" xml:space="preserve">
     <value>Enter the name of the exercise:</value>
@@ -138,11 +153,23 @@
   <data name="EnterUserName" xml:space="preserve">
     <value>Enter user name:</value>
   </data>
+  <data name="Fats" xml:space="preserve">
+    <value>Fats</value>
+  </data>
+  <data name="From" xml:space="preserve">
+    <value>from</value>
+  </data>
+  <data name="Grams" xml:space="preserve">
+    <value>Grams</value>
+  </data>
   <data name="Height" xml:space="preserve">
     <value>height</value>
   </data>
   <data name="Hello" xml:space="preserve">
     <value>Welcome to the CodeBlogFitness app from Gavr.</value>
+  </data>
+  <data name="Invalid" xml:space="preserve">
+    <value>Invalid field format</value>
   </data>
   <data name="PortionWeight" xml:space="preserve">
     <value>Portion weight
@@ -151,10 +178,19 @@
   <data name="Proteins" xml:space="preserve">
     <value>Proteins</value>
   </data>
+  <data name="Q" xml:space="preserve">
+    <value>Q - Exit.</value>
+  </data>
   <data name="StartExercise" xml:space="preserve">
     <value>start of the exercise</value>
   </data>
+  <data name="To" xml:space="preserve">
+    <value>to</value>
+  </data>
   <data name="Weight" xml:space="preserve">
     <value>weight</value>
+  </data>
+  <data name="WhatDo" xml:space="preserve">
+    <value>What do you want to do?</value>
   </data>
 </root>

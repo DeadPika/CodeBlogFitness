@@ -117,14 +117,29 @@
   <resheader name="writer">
     <value>System.Resources.ResXResourceWriter, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
   </resheader>
+  <data name="A" xml:space="preserve">
+    <value>A - Ввести упражнение.</value>
+  </data>
   <data name="Birthdate" xml:space="preserve">
     <value>дата рождения</value>
+  </data>
+  <data name="Calories" xml:space="preserve">
+    <value>Калории</value>
+  </data>
+  <data name="Carbohydrates" xml:space="preserve">
+    <value>Углеводы</value>
+  </data>
+  <data name="E" xml:space="preserve">
+    <value>E - Ввести приём пищи.</value>
   </data>
   <data name="EndExercise" xml:space="preserve">
     <value>окончание упражнения</value>
   </data>
   <data name="EnergyPerMinute" xml:space="preserve">
     <value>расход энергии в минуту</value>
+  </data>
+  <data name="Enter" xml:space="preserve">
+    <value>Введите</value>
   </data>
   <data name="EnterExercise" xml:space="preserve">
     <value>Введите название упражнения: </value>
@@ -138,11 +153,23 @@
   <data name="EnterUserName" xml:space="preserve">
     <value>Введите имя пользователя:</value>
   </data>
+  <data name="Fats" xml:space="preserve">
+    <value>Жиры</value>
+  </data>
+  <data name="From" xml:space="preserve">
+    <value>с</value>
+  </data>
+  <data name="Grams" xml:space="preserve">
+    <value>грамм</value>
+  </data>
   <data name="Height" xml:space="preserve">
     <value>рост</value>
   </data>
   <data name="Hello" xml:space="preserve">
     <value>Вас приветствует приложение CodeBlogFitness от Гавра.</value>
+  </data>
+  <data name="Invalid" xml:space="preserve">
+    <value>Неверный формат поля</value>
   </data>
   <data name="PortionWeight" xml:space="preserve">
     <value>Вес порции</value>
@@ -150,10 +177,19 @@
   <data name="Proteins" xml:space="preserve">
     <value>Белки</value>
   </data>
+  <data name="Q" xml:space="preserve">
+    <value>Q - Выход.</value>
+  </data>
   <data name="StartExercise" xml:space="preserve">
     <value>начало упражнения</value>
   </data>
+  <data name="To" xml:space="preserve">
+    <value>до</value>
+  </data>
   <data name="Weight" xml:space="preserve">
     <value>вес</value>
+  </data>
+  <data name="WhatDo" xml:space="preserve">
+    <value>Что вы хотите сделать?</value>
   </data>
 </root>
