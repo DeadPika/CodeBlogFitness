@@ -12,6 +12,7 @@ namespace CodeBlogFitness.BL.Model
         /// Название.
         /// </summary>
         public string Name { get; set; }
+        public virtual ICollection<User> Users { get; set; }
         public Gender() { }
         /// <summary>
         /// Создать новый пол.

@@ -27,6 +27,7 @@ namespace CodeBlogFitness.BL.Model
         /// Калории за 100 грам продукта.
         /// </summary>
         public double Calories { get; set; }
+        public virtual ICollection<Eating> Eatings { get; set; }
         public Food() { }
         public Food(string name) : this(name, 0, 0, 0, 0) { }
         [JsonConstructor]

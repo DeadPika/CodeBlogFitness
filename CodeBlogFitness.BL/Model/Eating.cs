@@ -12,7 +12,6 @@ namespace CodeBlogFitness.BL.Model
         public int Id { get; set; }
         public DateTime Moment { get; set; }
         public List<FoodPortion> Foods { get; set; }
-        //public List<KeyValuePair<Food, double>> Foods { get; set; }
         public int UserId { get; set; }
         public virtual User User { get; set; }
         public Eating() { }
@@ -36,9 +35,6 @@ namespace CodeBlogFitness.BL.Model
                 var existing = Foods[index];
                 Foods[index] = new FoodPortion(existing.Food, existing.Weight + weight);
             }
-            //var key = Foods.Select(item => item.Key).FirstOrDefault(f => f.Name.Equals(food.Name));
-            //if (key == null) { Foods.Add(food, weight); }
-            //else { Foods[key] += weight; }
         }
     }
 }

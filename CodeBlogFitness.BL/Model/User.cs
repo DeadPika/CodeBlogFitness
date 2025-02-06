@@ -15,6 +15,7 @@ namespace CodeBlogFitness.BL.Model
         /// Имя.
         /// </summary>
         public string Name { get; set; }
+        public int GenderId { get; set; }
         /// <summary>
         /// Пол.
         /// </summary>
@@ -34,9 +35,6 @@ namespace CodeBlogFitness.BL.Model
         /// <summary>
         /// Возраст.
         /// </summary>
-        //DateTime nowDate = DateTime.Today;
-        //int age = nowDate.Year - birthDate.Year;
-        //if (birthDate > nowDate.AddYears(-age)) age--;
         public int Age { get { return DateTime.Now.Year - BirthDate.Year; } }
         public User() { }
         #endregion

@@ -12,6 +12,7 @@ namespace CodeBlogFitness.BL.Model
         /// Название активности.
         /// </summary>
         public string Name { get; set; }
+        public virtual ICollection<Exercise> Exercises { get; set; }
         /// <summary>
         /// Сжигаемые калории за каждую минуту.
         /// </summary>

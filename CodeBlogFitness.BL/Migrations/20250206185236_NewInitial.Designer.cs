@@ -4,6 +4,7 @@ using CodeBlogFitness.BL.Controller;
 using Microsoft.EntityFrameworkCore;
 using Microsoft.EntityFrameworkCore.Infrastructure;
 using Microsoft.EntityFrameworkCore.Metadata;
+using Microsoft.EntityFrameworkCore.Migrations;
 using Microsoft.EntityFrameworkCore.Storage.ValueConversion;
 
 #nullable disable
@@ -11,9 +12,11 @@ using Microsoft.EntityFrameworkCore.Storage.ValueConversion;
 namespace CodeBlogFitness.BL.Migrations
 {
     [DbContext(typeof(FitnessContext))]
-    partial class FitnessContextModelSnapshot : ModelSnapshot
+    [Migration("20250206185236_NewInitial")]
+    partial class NewInitial
     {
-        protected override void BuildModel(ModelBuilder modelBuilder)
+        /// <inheritdoc />
+        protected override void BuildTargetModel(ModelBuilder modelBuilder)
         {
 #pragma warning disable 612, 618
             modelBuilder
@@ -50,9 +53,6 @@ namespace CodeBlogFitness.BL.Migrations
 
                     SqlServerPropertyBuilderExtensions.UseIdentityColumn(b.Property<int>("Id"));
 
-                    b.Property<int?>("FoodId")
-                        .HasColumnType("int");
-
                     b.Property<DateTime>("Moment")
                         .HasColumnType("datetime2");
 
@@ -60,8 +60,6 @@ namespace CodeBlogFitness.BL.Migrations
                         .HasColumnType("int");
 
                     b.HasKey("Id");
-
-                    b.HasIndex("FoodId");
 
                     b.HasIndex("UserId");
 
@@ -202,10 +200,6 @@ namespace CodeBlogFitness.BL.Migrations
 
             modelBuilder.Entity("CodeBlogFitness.BL.Model.Eating", b =>
                 {
-                    b.HasOne("CodeBlogFitness.BL.Model.Food", null)
-                        .WithMany("Eatings")
-                        .HasForeignKey("FoodId");
-
                     b.HasOne("CodeBlogFitness.BL.Model.User", "User")
                         .WithMany()
                         .HasForeignKey("UserId")
@@ -252,7 +246,7 @@ namespace CodeBlogFitness.BL.Migrations
             modelBuilder.Entity("CodeBlogFitness.BL.Model.User", b =>
                 {
                     b.HasOne("CodeBlogFitness.BL.Model.Gender", "Gender")
-                        .WithMany("Users")
+                        .WithMany()
                         .HasForeignKey("GenderId")
                         .OnDelete(DeleteBehavior.Cascade)
                         .IsRequired();
@@ -268,16 +262,6 @@ namespace CodeBlogFitness.BL.Migrations
             modelBuilder.Entity("CodeBlogFitness.BL.Model.Eating", b =>
                 {
                     b.Navigation("Foods");
-                });
-
-            modelBuilder.Entity("CodeBlogFitness.BL.Model.Food", b =>
-                {
-                    b.Navigation("Eatings");
-                });
-
-            modelBuilder.Entity("CodeBlogFitness.BL.Model.Gender", b =>
-                {
-                    b.Navigation("Users");
                 });
 #pragma warning restore 612, 618
         }

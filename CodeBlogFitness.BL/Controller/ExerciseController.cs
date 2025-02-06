@@ -7,8 +7,6 @@ namespace CodeBlogFitness.BL.Controller
 {
     public class ExerciseController : ControllerBase
     {
-        private const string EXERCISES_FILE_NAME = "exercises.json";
-        private const string ACTIVITIES_FILE_NAME = "activities.json";
         private readonly User User;
         public List<Exercise> Exercises { get; }
         public List<Activity> Activities { get; }
@@ -26,7 +24,7 @@ namespace CodeBlogFitness.BL.Controller
         /// <returns></returns>
         private List<Activity> GetAllActivities()
         {
-            return Load<List<Activity>>(ACTIVITIES_FILE_NAME) ?? new List<Activity>();
+            return Load<Activity>() ?? new List<Activity>();
         }
 
         public void Add(Activity activity, DateTime begin, DateTime end)
@@ -51,15 +49,15 @@ namespace CodeBlogFitness.BL.Controller
         /// <exception cref="NotImplementedException"></exception>
         private List<Exercise> GetAllExercises()
         {
-            return Load<List<Exercise>>(EXERCISES_FILE_NAME) ?? new List<Exercise>();
+            return Load<Exercise>() ?? new List<Exercise>();
         }
         /// <summary>
         /// Сохранение всех упражнений и активностей.
         /// </summary>
         private void Save()
         {
-            Save(EXERCISES_FILE_NAME, Exercises);
-            Save(ACTIVITIES_FILE_NAME, Activities);
+            Save(Exercises);
+            Save(Activities);
         }
     }
 }

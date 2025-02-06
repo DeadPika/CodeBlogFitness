@@ -1,16 +1,9 @@
 ﻿using CodeBlogFitness.BL.Model;
-using System;
-using System.Collections.Generic;
-using System.IO;
-using System.Linq;
-using System.Runtime.Serialization.Formatters.Binary;
 
 namespace CodeBlogFitness.BL.Controller
 {
     public class EatingController : ControllerBase
     {
-        private const string FOODS_FILE_NAME = "foods.json";
-        private const string EATINGS_FILE_NAME = "eatings.json";
         private readonly User User;
         public List<Food> Foods { get; }
         public Eating Eating { get; }
@@ -37,16 +30,16 @@ namespace CodeBlogFitness.BL.Controller
         }
         private void Save()
         {
-            Save(FOODS_FILE_NAME, Foods);
-            Save(EATINGS_FILE_NAME, Eating);
+            Save(Foods);
+            Save(new List<Eating> { Eating });
         }
         private Eating GetEating()
         {
-            return Load<Eating>(EATINGS_FILE_NAME) ?? new Eating(User);
+            return Load<Eating>().FirstOrDefault() ?? new Eating();
         }
         private List<Food> GetAllFoods()
         {
-            return Load<List<Food>>(FOODS_FILE_NAME) ?? new List<Food>();
+            return Load<Food>() ?? new List<Food>();
         }
     }
 }

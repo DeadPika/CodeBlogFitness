@@ -9,7 +9,7 @@ namespace CodeBlogFitness.CMD
     {
         static void Main(string[] args)
         {
-            var culture = CultureInfo.CreateSpecificCulture("de-de");
+            var culture = CultureInfo.CreateSpecificCulture("");
             var resourceManager = new ResourceManager("CodeBlogFitness.CMD.Languages.Messages", typeof(Program).Assembly);
             Console.WriteLine(resourceManager.GetString("Hello", culture));
 

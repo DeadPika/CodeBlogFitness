@@ -7,12 +7,13 @@ namespace CodeBlogFitness.BL.Controller
 {
     internal class SerializeDataSaver : IDataSaver
     {
-        public T Load<T>(string fileName) where T : class
+        public List<T> Load<T>() where T : class
         {
+            var fileName = typeof(T).Name;
             if (!File.Exists(fileName))
             {
-                var defaultObject = default(T);
-                Save(fileName, defaultObject);
+                var defaultObject = new List<T>();
+                Save(defaultObject);
                 return defaultObject;
             }
             string json = File.ReadAllText(fileName);
@@ -20,14 +21,15 @@ namespace CodeBlogFitness.BL.Controller
             if (string.IsNullOrWhiteSpace(json))
             {
                 Console.WriteLine("Файл пуст, создаётся новый объект Person");
-                return default(T);
+                return new List<T>();
             }
 
-            return JsonSerializer.Deserialize<T>(json);
+            return JsonSerializer.Deserialize<List<T>>(json);
         }
 
-        public void Save(string fileName, object item)
+        public void Save<T>(List<T> item) where T : class
         {
+            var fileName = typeof(T).Name;
             var options = new JsonSerializerOptions
             {
                 WriteIndented = true,
